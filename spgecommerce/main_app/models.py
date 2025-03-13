@@ -24,7 +24,7 @@ class Product(models.Model):
     img = models.ImageField(upload_to='uploads/product/')
 
     def __str__(self):
-        return {self.name}
+        return self.name
 
 class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -34,4 +34,4 @@ class Order(models.Model):
     status = models.BooleanField(default=False)
 
     def __str__(self):
-        return {self.product}
+        return self.product
